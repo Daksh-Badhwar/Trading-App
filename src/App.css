@@ -1,0 +1,961 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f7fb;
+  color: #172033;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e8ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  background: #111827;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo h2 {
+  font-size: 17px;
+}
+
+.logo span {
+  display: block;
+  font-size: 11px;
+  color: #8a93a5;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.desktop-nav a {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.desktop-nav a.active {
+  color: #111827;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 13px;
+  color: #536071;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #19a974;
+
+  display: inline-block;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: #e8edf7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profile-info strong,
+.profile-info span {
+  display: block;
+}
+
+.profile-info strong {
+  font-size: 13px;
+}
+
+.profile-info span {
+  font-size: 11px;
+  color: #8a93a5;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main-container {
+  max-width: 1500px;
+  margin: auto;
+
+  padding: 32px;
+}
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 26px;
+}
+
+.page-heading h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.page-heading p {
+  color: #7a8496;
+  font-size: 14px;
+}
+
+.market-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e6e9ef;
+
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.market-status strong,
+.market-status span {
+  display: block;
+}
+
+.market-status strong {
+  font-size: 13px;
+}
+
+.market-status div span {
+  font-size: 11px;
+  color: #8a93a5;
+  margin-top: 2px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+.card {
+  background: #ffffff;
+
+  border: 1px solid #e5e8ef;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 15px rgba(30, 41, 59, 0.03);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.card-header h3 {
+  font-size: 15px;
+}
+
+.card-header p {
+  color: #8a93a5;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* =========================
+   MARKET LIST
+========================= */
+
+.market-card {
+  overflow: hidden;
+}
+
+.live-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #159669;
+
+  background: #eaf8f1;
+
+  padding: 5px 8px;
+
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.live-badge span {
+  width: 5px;
+  height: 5px;
+  background: #19a974;
+  border-radius: 50%;
+}
+
+.market-list {
+  padding: 8px;
+}
+
+.market-item {
+  width: 100%;
+
+  background: transparent;
+
+  border: 0;
+
+  padding: 13px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 9px;
+
+  text-align: left;
+
+  transition: 0.15s;
+}
+
+.market-item:hover {
+  background: #f5f7fa;
+}
+
+.market-selected {
+  background: #f0f4fa !important;
+}
+
+.market-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.market-icon {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 8px;
+
+  background: #eef2f7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.market-left strong,
+.market-left span {
+  display: block;
+}
+
+.market-left strong {
+  font-size: 13px;
+}
+
+.market-left span {
+  color: #98a0af;
+  font-size: 10px;
+
+  margin-top: 3px;
+}
+
+.market-right {
+  text-align: right;
+}
+
+.market-right strong,
+.market-right span {
+  display: block;
+}
+
+.market-right strong {
+  font-size: 12px;
+}
+
+.market-right span {
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.price-up {
+  color: #159669 !important;
+}
+
+.price-down {
+  color: #df5353 !important;
+}
+
+/* =========================
+   ORDER PANEL
+========================= */
+
+.order-card {
+  overflow: hidden;
+}
+
+.demo-label {
+  font-size: 10px;
+
+  padding: 5px 7px;
+
+  border-radius: 5px;
+
+  background: #f0f2f5;
+
+  color: #697386;
+
+  font-weight: 700;
+}
+
+.selected-symbol {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  background: #fafbfc;
+}
+
+.selected-symbol span {
+  display: block;
+
+  color: #929bab;
+
+  font-size: 10px;
+
+  margin-bottom: 5px;
+}
+
+.selected-symbol strong {
+  font-size: 15px;
+}
+
+.current-price {
+  text-align: right;
+}
+
+.side-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  padding: 18px 20px 10px;
+}
+
+.side-buttons button {
+  height: 42px;
+
+  border-radius: 8px;
+
+  border: 1px solid #e1e5eb;
+
+  background: #ffffff;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.side-buttons .buy.active-side {
+  background: #eaf8f1;
+  border-color: #bfe9d5;
+  color: #13895f;
+}
+
+.side-buttons .sell.active-side {
+  background: #fff0f0;
+  border-color: #f1c7c7;
+  color: #d14d4d;
+}
+
+.form-group {
+  padding: 10px 20px;
+}
+
+.form-group label {
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+.form-group input {
+  width: 100%;
+
+  height: 42px;
+
+  border: 1px solid #dfe3e9;
+
+  border-radius: 8px;
+
+  padding: 0 12px;
+
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #64748b;
+
+  box-shadow:
+    0 0 0 3px rgba(100, 116, 139, 0.1);
+}
+
+.order-summary {
+  margin: 5px 20px 15px;
+
+  border-top: 1px solid #edf0f4;
+  border-bottom: 1px solid #edf0f4;
+
+  padding: 12px 0;
+}
+
+.order-summary div {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 6px 0;
+
+  font-size: 12px;
+}
+
+.order-summary span {
+  color: #8992a2;
+}
+
+.buy-text {
+  color: #159669;
+}
+
+.sell-text {
+  color: #df5353;
+}
+
+.message {
+  margin: 0 20px 12px;
+
+  padding: 10px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+}
+
+.success-message {
+  color: #137c57;
+  background: #eaf8f1;
+}
+
+.error-message {
+  color: #c24141;
+  background: #fff0f0;
+}
+
+.execute-button {
+  width: calc(100% - 40px);
+
+  margin: 0 20px;
+
+  height: 45px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.execute-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.execute-buy {
+  background: #159669;
+}
+
+.execute-buy:hover:not(:disabled) {
+  background: #117c56;
+}
+
+.execute-sell {
+  background: #df5353;
+}
+
+.execute-sell:hover:not(:disabled) {
+  background: #c94343;
+}
+
+.order-note {
+  text-align: center;
+
+  font-size: 10px;
+
+  color: #9aa2b1;
+
+  padding: 13px 20px 18px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+  margin-top: 22px;
+}
+
+.section-title {
+  margin-bottom: 12px;
+}
+
+.section-title h2 {
+  font-size: 17px;
+}
+
+/* =========================
+   ACCOUNT SUMMARY
+========================= */
+
+.summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.summary-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e8ef;
+
+  border-radius: 12px;
+
+  padding: 18px;
+}
+
+.summary-card span,
+.summary-card small {
+  display: block;
+}
+
+.summary-card span {
+  color: #7f8898;
+  font-size: 12px;
+}
+
+.summary-card strong {
+  display: block;
+
+  font-size: 20px;
+
+  margin: 8px 0;
+}
+
+.summary-card small {
+  color: #a0a7b4;
+
+  font-size: 10px;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.positions-card,
+.history-card {
+  overflow: hidden;
+}
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 650px;
+}
+
+th,
+td {
+  text-align: left;
+
+  padding: 14px 20px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  font-size: 12px;
+}
+
+th {
+  background: #fafbfc;
+
+  color: #858e9e;
+
+  font-weight: 600;
+}
+
+td {
+  color: #4e5869;
+}
+
+td strong {
+  color: #172033;
+}
+
+.table-buy {
+  color: #159669;
+
+  background: #eaf8f1;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  font-weight: 700;
+
+  font-size: 10px;
+}
+
+.table-sell {
+  color: #d34c4c;
+
+  background: #fff0f0;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  font-weight: 700;
+
+  font-size: 10px;
+}
+
+.status-success {
+  color: #159669;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.trade-count {
+  font-size: 11px;
+
+  color: #7e8796;
+
+  background: #f2f4f7;
+
+  padding: 6px 9px;
+
+  border-radius: 6px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: #8c95a4;
+}
+
+.empty-icon {
+  width: 42px;
+  height: 42px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  background: #f0f2f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.empty-state h4 {
+  color: #4e5869;
+
+  font-size: 14px;
+
+  margin-bottom: 5px;
+}
+
+.empty-state p {
+  font-size: 11px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .left-column,
+  .right-column {
+    grid-column: auto;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   TABLET 768
+========================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 18px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .connection {
+    font-size: 11px;
+  }
+
+  .main-container {
+    padding: 20px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+
+    gap: 15px;
+
+    flex-direction: column;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column,
+  .right-column {
+    grid-column: auto;
+  }
+}
+
+/* =========================
+   MOBILE 375
+========================= */
+
+@media (max-width: 500px) {
+  .header {
+    height: 64px;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .logo h2 {
+    font-size: 15px;
+  }
+
+  .connection {
+    display: none;
+  }
+
+  .main-container {
+    padding: 14px;
+  }
+
+  .page-heading h1 {
+    font-size: 23px;
+  }
+
+  .page-heading p {
+    font-size: 12px;
+  }
+
+  .market-status {
+    width: 100%;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    padding: 16px;
+  }
+
+  .selected-symbol {
+    padding: 15px;
+  }
+
+  .side-buttons {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .form-group {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .order-summary {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .execute-button {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .order-note {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .market-left span {
+    max-width: 100px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+}

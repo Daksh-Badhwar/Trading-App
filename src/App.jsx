@@ -99,7 +99,7 @@ function App() {
       side: trade.side,
       quantity: trade.quantity,
       price: trade.price,
-      pnl: 0,
+      
     };
 
     setPositions((currentPositions) => [
